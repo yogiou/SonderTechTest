@@ -1,0 +1,70 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "89c66f6d1340818726e5fd3cf138e921",
+    "entities": [
+      {
+        "tableName": "AirlineDataEntity",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uid` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT, `country` TEXT, `logo` TEXT, `slogan` TEXT, `head_quaters` TEXT, `established` INTEGER)",
+        "fields": [
+          {
+            "fieldPath": "uid",
+            "columnName": "uid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "country",
+            "columnName": "country",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "logo",
+            "columnName": "logo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "slogan",
+            "columnName": "slogan",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "head_quaters",
+            "columnName": "head_quaters",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "established",
+            "columnName": "established",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "uid"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '89c66f6d1340818726e5fd3cf138e921')"
+    ]
+  }
+}
