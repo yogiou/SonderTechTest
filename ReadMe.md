@@ -20,6 +20,7 @@ Will not call the api to fetch if no internet connection
 Requirements to build the app:
 Android Studio Arctic Fox (2020.3.1) Stable
 Java 1.8 above
+Please do not use dark mode as it is not supported
 
 Instructions to build and launch:
 Clone the project from git, then waiting for gradle building successfully, then click Run 'app' button in Android studio 
