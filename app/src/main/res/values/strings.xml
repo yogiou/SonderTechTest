@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SonderTechTest</string>
+    <string name="splash">Splash</string>
+    <string name="airline_details">Airline Details</string>
+    <string name="detail_content">%1$s Completed %2$d Trips"</string>
+    <string name="details_title">Details</string>
+    <string name="passenger_list">Passenger List</string>
+</resources>
