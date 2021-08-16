@@ -60,10 +60,10 @@ class PassengerListFragment : Fragment(), PassengerListAdapter.OnItemClickListen
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
         val passengerListResponseObserver = Observer<Resource<PassengerListResponseDTO>> { response ->
-            response?.let {
-                when (it.status) {
+            response?.let { resoonse ->
+                when (resoonse.status) {
                     Status.SUCCESS -> {
-                        it.data?.data?.let { passengerList ->
+                        resoonse.data?.data?.takeIf { it.isNotEmpty() }?.let { passengerList ->
                             val pos = passengerListAdapter.itemCount
                             passengerListAdapter.items.addAll(passengerList)
                             passengerListAdapter.notifyItemRangeInserted(pos, passengerList.size)
@@ -76,7 +76,7 @@ class PassengerListFragment : Fragment(), PassengerListAdapter.OnItemClickListen
                     }
                     Status.ERROR -> {
                         binding.loadingIndicator.visibility = View.GONE
-                        it.message?.let { msg ->
+                        resoonse.message?.let { msg ->
                             Snackbar.make(binding.root, msg, Snackbar.LENGTH_SHORT).show()
                         }
                     }
